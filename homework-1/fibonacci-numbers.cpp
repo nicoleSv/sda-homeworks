@@ -32,7 +32,6 @@ long fib_logn(int n) //O(logn) with formula for odd and even numbers
 	return calc[n];
 }
 
-
 int main()
 {
 	int n;
