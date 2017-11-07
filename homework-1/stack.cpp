@@ -83,10 +83,7 @@ void Stack<T>::copy_stack(Stack<T> const& other)
 template <typename T>
 void Stack<T>::erase_stack()
 {
-	while (empty() == false)
-	{
-		pop();
-	}
+	while (empty() == false) pop();
 }
 
 template <typename T>
