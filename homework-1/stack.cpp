@@ -182,22 +182,29 @@ int main()
 	int g;
 	std::cin >> g;
 	for (int a0 = 0; a0 < g; a0++) {
-		int n;
-		int m;
-		int x;
+		int n, m, x;
+		
 		std::cin >> n >> m >> x;
+		int* array_a = new int[n];
+		int* array_b = new int[m];
+		
+		for (int i = 0; i < n; i++) {
+			std::cin >> array_a[i];
+		}
+		
+		for (int i = 0; i < m; i++) {
+			std::cin >> array_b[i];
+		}
 		Stack<int> A;
-		for (int a_i = 0; a_i < n; a_i++) {
-			int a;
-			std::cin >> a;
-			A.push(a);
-		}
 		Stack<int> B;
-		for (int b_i = 0; b_i < m; b_i++) {
-			int b;
-			std::cin >> b;
-			B.push(b);
+		for (int i = n-1; i >= 0; i--) {
+			A.push(array_a[i]);
 		}
+
+		for (int i = m; i >= 0; i--) {
+			B.push(array_b[i]);
+		}
+
 		std::cout << game(A, B, x) << std::endl;
 	}
 
