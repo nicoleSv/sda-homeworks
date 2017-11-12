@@ -13,7 +13,6 @@ class Stack
 {
 	node<T>* top_node;
 	void copy(node<T>* to_copy);
-	void copy_stack(Stack const& other);
 	void erase_stack();
 public:
 	Stack();
@@ -74,13 +73,6 @@ void Stack<T>::copy(node<T>* to_copy)
 }
 
 template <typename T>
-void Stack<T>::copy_stack(Stack<T> const& other)
-{
-	top_node = nullptr;
-	copy(other.top_node);
-}
-
-template <typename T>
 void Stack<T>::erase_stack()
 {
 	while (empty() == false) pop();
@@ -89,7 +81,8 @@ void Stack<T>::erase_stack()
 template <typename T>
 Stack<T>::Stack(Stack const& other)
 {
-	copy_stack(other);
+	top_node = nullptr;
+	copy(other.top_node);
 }
 
 template <typename T>
@@ -98,7 +91,7 @@ Stack<T>& Stack<T>::operator=(Stack const& other)
 	if (this != &other)
 	{
 		erase_stack();
-		copy(other);
+		copy(other.top_node);
 	}
 	return *this;
 }
