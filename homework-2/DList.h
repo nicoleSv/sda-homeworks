@@ -91,7 +91,7 @@ void DList<T>::copy_list(DList<T> const& other)
 
 	if (other.start)
 	{
-		node<T> *p = list.start;
+		node<T> *p = other.start;
 		while (p)
 		{
 			insert_to_end(p->data);
