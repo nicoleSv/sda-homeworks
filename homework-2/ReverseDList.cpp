@@ -26,6 +26,7 @@ int main()
 	
 	list.iter_start();
 	list = reverse(list.iter_next());
-	list.print(); // 4 3 2 1
+	list.print(); // 4 3 2 1
+
 	return 0;
 }
