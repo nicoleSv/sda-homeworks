@@ -59,7 +59,7 @@ void LList<T>::copy_list(LList<T> const &other)
 	end = NULL;
 	if (other.start)
 	{
-		node<T> *p = list.start;
+		node<T> *p = other.start;
 		while (p)
 		{
 			insert_to_end(p->data);
