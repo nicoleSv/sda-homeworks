@@ -36,6 +36,8 @@ public:
 	void Create3(T x, BinOrdTree<T> left, BinOrdTree<T> right);
 	void Create();
 	void MinTree(T &x, BinOrdTree<T> &minT) const;
+	
+	int height(node<T>* r);
 };
 
 template <typename T>
@@ -239,4 +241,19 @@ void BinOrdTree<T>::MinTree(T &x, BinOrdTree<T> &minT) const
 		LeftTree().MinTree(x, tree);
 		minT.Create3(a, tree, RightTree());
 	}
+}
+
+template <typename T>
+int BinOrdTree<T>::height(node<T>* r)
+{
+	int height_left = 0, height_right = 0;
+
+	if (!r) return -1;
+	else
+	{
+		if (r->left) height_left = 1 + height(r->left);
+		if (r->right) height_right = 1 + height(r->right);
+	}
+
+	return height_left > height_right ? height_left : height_right;
 }
