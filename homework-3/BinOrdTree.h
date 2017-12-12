@@ -1,13 +1,13 @@
 #pragma once
 #include <iostream>
 
-/*template <typename T>
+template <typename T>
 struct node
 {
 	T inf;
 	node<T> *left;
 	node<T> *right;
-};*/
+};
 
 template <typename T>
 class BinOrdTree
