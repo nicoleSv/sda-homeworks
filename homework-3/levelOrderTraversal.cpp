@@ -21,20 +21,6 @@ void levelOrder(node<T>* root)
 
 int main()
 {
-	/*
-	BinTree<int> tree;
-	tree.Create();
-	tree.printTree();
-	
-	ChainBinTree tree;
-	tree.CreateTree();
-	tree.print();
-	
-	ParentBinTree tree;
-	tree.CreateTree(2);
-	tree.print();
-	*/
-
 	BinOrdTree<int> tree;
 	tree.Create();
 	tree.printTree();
