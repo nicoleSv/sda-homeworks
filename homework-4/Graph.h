@@ -77,7 +77,8 @@ void Graph::create_graph()
 		AddRib(x, y);
 		std::cout << "next: y/n? ";
 		std::cin >> c;
-	} while (c == 'y');
+	} while (c == 'y');
+
 }
 
 void Graph::print()
