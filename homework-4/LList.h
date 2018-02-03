@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-
 template <typename T>
 struct node
 {
@@ -37,6 +35,9 @@ public:
 	void print();
 	int length();
 	void concat(LList<T> const &other);
+
+	bool member(T a);
+	bool empty();
 };
 
 template <typename T>
@@ -225,4 +226,22 @@ void LList<T>::concat(LList<T> const &other)
 		insert_to_end(p->data);
 		p = p->next;
 	}
+}
+
+template <typename T>
+bool LList<T>::empty()
+{
+	return start == NULL;
+}
+
+template <typename T>
+bool LList<T>::member(T a)
+{
+	node<T>* p = start;
+	while (p)
+	{
+		if (p->data == a) return true;
+		p = p->next;
+	}
+	return false;
 }
